@@ -1,0 +1,19 @@
+/* 
+ * General CSS rules which are used on every page 
+ * 
+ * Include things that are going to be used on page, such as rules
+ * targeting the header, footer, or common body components. Include
+ * more specific rules as internal stylesheets or stylesheet in page
+ * folder.
+ */
+
+/* Rule for the body div of all pages. */
+.body-div {
+    background-color: #005F4E;
+    color: white;
+}
+
+/* Rule for h1 elements */
+h1 {
+    text-align: center;
+}
