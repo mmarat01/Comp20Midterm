@@ -7,13 +7,146 @@
  * folder.
  */
 
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+/* reset */
+html {
+  font-size: 100%;
+}
+
+* {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* general body element */
+body {
+  font-family: "Archivo", sans-serif;
+  background-color: #fff;
+  color: #000;
+  line-height: 1.5;
+  min-width: 0;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 5.5rem 1fr 3.2rem;
+}
+
+/* Rule for the header div of all pages */
+#t-shirt-logo {
+  margin-left: 2rem;
+}
+
+.navbar {
+  background-color: #fff;
+  grid-row: 1;
+  box-shadow: 0px 1px 10px rgb(46, 46, 46);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+}
+
+.nav-links ul {
+  display: flex;
+  padding: 1rem;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links li:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-links li a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.toggle-button {
+  position: absolute;
+  right: 1rem;
+  margin: 2rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+}
+
+.toggle-button .burger-bar {
+  height: 3px;
+  width: 100%;
+  background-color: #000;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 675px) {
+  #t-shirt-logo {
+    margin-top: 1.2rem;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-links li {
+    text-align: center;
+  }
+
+  .nav-links li a {
+    padding: 0.5rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
 /* Rule for the body div of all pages. */
 .body-div {
-    background-color: #005F4E;
-    color: white;
+  background-color: #005f4e;
+  color: #fff;
+  grid-row: 2;
 }
+
+/* Rule for the footer div of all pages */
 
 /* Rule for h1 elements */
 h1 {
-    text-align: center;
+  text-align: center;
+  font-weight: 700;
 }

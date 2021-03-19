@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="../styles.css">
-        <link rel="stylesheet" href="./index.css">
-    </head>
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script>
-        // Define shirt class
-        function Shirt(name, image, cost) {
-            this.name = name
-            this.image = image
-            this.cost = cost
-        }
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>T-Shirt Hub</title>
+    <meta
+      name="author"
+      content="Co-authors: Theseus Lim, Mijael Maratuech, Jimmy Maslen, and Stephanie Prisco"
+    />
+    <meta name="description" content="COMP20 midterm project" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script>
+    // Define shirt class
+    function Shirt(name, image, cost) {
+      this.name = name;
+      this.image = image;
+      this.cost = cost;
+    }
 
-        // Create an array of all shirts
-        // Shirts can be added or removed as necessary
-        shirts = [ new Shirt("Avacardio Shirt", "avacardio-shirt.jpg", 10),
-        new Shirt("Butterfly Shirt", "butterfly-shirt.jpg", 20),
-        new Shirt("Fish Shirt", "fish-shirt.jpg", 15),
-        new Shirt("Video Game Shirt", "gameshirt.jpg", 15),
-        new Shirt("Marvel Shirt", "marvel-shirt.jpg", 20),
-        new Shirt("Nasa Shirt", "nasa-shirt.jpg", 25) ]
+    // Create an array of all shirts
+    // Shirts can be added or removed as necessary
+    shirts = [
+      new Shirt("Avacardio Shirt", "avacardio-shirt.jpg", 10),
+      new Shirt("Butterfly Shirt", "butterfly-shirt.jpg", 20),
+      new Shirt("Fish Shirt", "fish-shirt.jpg", 15),
+      new Shirt("Video Game Shirt", "gameshirt.jpg", 15),
+      new Shirt("Marvel Shirt", "marvel-shirt.jpg", 20),
+      new Shirt("Nasa Shirt", "nasa-shirt.jpg", 25),
+    ];
 
-        // Run on page load
-        $(document).ready(() => {
-            for (shirt of shirts) {
-                document.getElementsByClassName("shop-panel-div")[0].innerHTML += 
-                `
+    // Run on page load
+    $(document).ready(() => {
+      for (shirt of shirts) {
+        document.getElementsByClassName("shop-panel-div")[0].innerHTML += `
                 <div class="item-div"> 
                     <image class="item-image" src="../Images/shirts/${shirt.image}"/>
                     <div class="label-div">
@@ -37,23 +47,22 @@
                         </div>
                     </div>
                 </div>
-                `
-            }
-        })   
-    </script>
-    <body>
-        <!-- BEGIN HEADER, NAVBAR -->
-        <!-- END HEADER, NAVBAR -->
+                `;
+      }
+    });
+  </script>
+  <body>
+    <!-- BEGIN HEADER, NAVBAR -->
+    <!-- END HEADER, NAVBAR -->
 
-        <!-- BEGIN BODY -->
-        <div class="body-div">
-            <h1> Graphic Tees </h1>
-            <div class="shop-panel-div">
-            </div>
-        </div>
-        <!-- END BODY-->
+    <!-- BEGIN BODY -->
+    <div class="body-div">
+      <h1 class="section-title">Graphic Tees</h1>
+      <div class="shop-panel-div"></div>
+    </div>
+    <!-- END BODY-->
 
-        <!-- BEGIN FOOTER -->
-        <!-- END FOOTER -->
-    </body>
+    <!-- BEGIN FOOTER -->
+    <!-- END FOOTER -->
+  </body>
 </html>
