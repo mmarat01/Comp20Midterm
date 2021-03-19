@@ -1,0 +1,35 @@
+h1 {
+    font-size: 40px;
+}
+
+p {
+    text-align: center;
+    font-family: "archivo black", sans-serif;
+}
+
+.picture {
+    max-width: 30%;
+    height: 500px;
+    top : 100px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px 50px 40px 50px;
+    border: 3px solid #C4C4C4;
+    display: inline-block;
+    background-color: #fff;
+}
+
+.picture p {
+    color: #000;
+    font-size: 30px;
+}
+
+.image {
+    max-height: 400px;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
