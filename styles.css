@@ -21,10 +21,6 @@ html {
   box-sizing: border-box;
 }
 
-html {
-  font-size: 100%;
-}
-
 img {
   max-width: 100%;
   display: block;
@@ -43,8 +39,13 @@ body {
 }
 
 /* Rule for the header div of all pages */
-#t-shirt-logo {
+#t-shirt-logo,
+#small-logo {
   margin-left: 2rem;
+}
+
+#small-logo {
+  display: none;
 }
 
 .navbar {
@@ -136,6 +137,16 @@ body {
   }
 }
 
+@media screen and (max-width: 400px) {
+  #t-shirt-logo {
+    display: none;
+  }
+  #small-logo {
+    margin-top: 1.3rem;
+    display: block;
+  }
+}
+
 /* Rule for the body div of all pages. */
 .body-div {
   background-color: #005f4e;
@@ -143,8 +154,27 @@ body {
   grid-row: 2;
 }
 
-/* Rule for the footer div of all pages */
+.page-container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem 4rem 2rem 4rem;
+}
+@media screen and (max-width: 600px) {
+  .page-container {
+    padding: 2rem 2rem 2rem 2rem;
+  }
+}
 
+/* Rule for the footer div of all pages */
+footer {
+  grid-row: 3;
+  font-size: 0.8em;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
 /* Rule for h1 elements */
 h1 {
   text-align: center;
