@@ -1,55 +1,59 @@
+/* changed margins to relative units for better consistency across devices */
+.section-title {
+  font-size: 2em;
+  padding: 1rem;
+}
+
 .shop-panel-div {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .item-div {
-    max-width: fit-content;
-    margin: 0px 50px 40px 50px;
-    border: 3px solid #C4C4C4;
-    display: inline-block;
+  max-width: fit-content;
+  margin: 1.5rem 1.75rem 1.5rem 1.75rem;
+  border: 3px solid #c4c4c4;
+  display: inline-block;
 }
 
-
 .label-div {
-    padding: 5px;
+  padding: 5px;
 }
 
 .item-image {
-    width: 300px;
-    height: 400px;
+  width: 300px;
+  height: 400px;
 }
 
-
 .name-label {
-    display: block;
-    font-weight: bold;
+  display: block;
+  font-weight: bold;
 }
 
 .cost-label {
-    display: block;
+  display: block;
 }
 
 .buy-button-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .buy-button {
-    text-decoration: none;
-    padding: 2px;
-    background-color: orange;
-    color: black;
-    text-align: center;
-    border: black solid 2px;
-    text-transform: capitalize;
+  text-decoration: none;
+  padding: 2px;
+  background-color: orange;
+  color: black;
+  text-align: center;
+  border: black solid 2px;
+  text-transform: capitalize;
 }
 
 .buy-button:hover {
-    cursor: pointer;
-    background-color: red;
+  cursor: pointer;
+  background-color: red;
 }

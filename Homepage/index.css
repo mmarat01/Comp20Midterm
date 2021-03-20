@@ -1,52 +1,52 @@
 h1 {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 p {
-    text-align: center;
-    font-family: "archivo black", sans-serif;
+  text-align: center;
+  /* font-family: "archivo black", sans-serif; */
 }
 
 #maintext {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 #pictures {
-    width: 100%;
-    max-height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  width: 100%;
+  max-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .picture {
-    width: 30%;
-    height: 300px;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: fit-content;
-    margin: 0px 50px 40px 50px;
-    border: 3px solid #C4C4C4;
-    display: inline-block;
-    background-color: #fff;
+  width: 30%;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: fit-content;
+  margin: 0px 50px 40px 50px;
+  border: 3px solid #c4c4c4;
+  display: inline-block;
+  background-color: #fff;
 }
 
 .picture p {
-    color: #000;
-    font-size: 30px;
+  color: #000;
+  font-size: 30px;
 }
 
 .image {
-    max-height: 200px;
-    max-width: 200px;
+  max-height: 200px;
+  max-width: 200px;
 }
 
 #testimonials {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
