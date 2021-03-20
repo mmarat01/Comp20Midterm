@@ -6,7 +6,15 @@
     </head>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <script>
-        
+        window.onload = function() {
+            console.log("drawing image...")
+            var canvas = document.getElementById("myCanvas")
+            var ctx = canvas.getContext("2d")
+            var img = document.getElementById("custom-shirt-image")
+            console.log($('canvas').width())
+            ctx.drawImage(img, 10, 10, $('canvas').width(), $('canvas').height())
+            console.log("drawing image...")
+        };
     </script>
     <body>
         <!-- BEGIN HEADER, NAVBAR -->
@@ -29,10 +37,13 @@
                 </div>
                 <div class="flex-item">
                     <div class="custom-image-div">
-                        <canvas id="viewport" class="custom-shirt-image">
+                        <img id="custom-shirt-image" style="display: none;" width="220" height="277" src="../Images/shirts/custom-shirt.png" alt="The Scream">
+                        <p>Canvas:</p>
+                        <canvas id="myCanvas" width="240" height="297"
+                            style="border:1px solid #d3d3d3;">
+                            Your browser does not support the HTML5 canvas tag.
                         </canvas>
                     </div>
-                </div>
             </div>
         </div>
         <!-- END BODY-->
