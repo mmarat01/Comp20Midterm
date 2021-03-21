@@ -36,6 +36,7 @@ $(document).ready(() => {
   }
 
   $("label[class=buy-button]").on('click', (e) => {
+
     let shirt = shirts[parseInt(e.target.id)];
     // Get the modal
     let modal = document.getElementById("myModal");
@@ -44,40 +45,130 @@ $(document).ready(() => {
     <div class="modal-content">
       <span class="close">&times;</span>
       <h3> Order Details </h3>
+      <img style="border: 1px" width=200 src="../Images/shirts/${shirt.image}"/>
       <p> Item: ${shirt.name} </p> 
       <p> Cost: $${shirt.cost} </p>
-      <form>
+      <form method="post">
         <h3> Delivery Details </h3>
-        <input class="half" name="country" type="text" placeholder="Country"/> <br/>
-        <input class="half" type="text" placeholder="First Name"/> 
-        <input class="half" type="text" placeholder="Last Name"/> <br/>
-        <input class="third" name="city" type="text" placeholder="City"/> 
-        <input class="third" name="state" type="text" placeholder="State"/> 
-        <input class="third" name="zip" type="text" placeholder="Zip Code"/> <br/>
-        <input class="half" name="email" type="text" placeholder="Email"/> 
-        <input class="half" name="email_confirm" type="text" placeholder="Confirm Email"/> <br/>
+        <div class="input-div-half">
+          <label class="input-label" for="country">Country</label>
+          <input name="country" type="text"/>
+        </div>
+        <br style="clear:both;" />
+
+        <div class="input-div-half">
+          <label class="input-label" for="fname">First Name</label>
+          <input id="fname" type="text" value="" name="name">
+        </div>
+        <div class="input-div-half">
+          <label class="input-label" for="lname">Last Name</label>
+          <input id="lname" type="text" value="" name="name">
+        </div>
+        <br style="clear:both;" />
+
+        <div class="input-div-third">
+          <label class="input-label" for="city">City</label>
+          <input name="city" type="text"/> 
+        </div>
+        <div class="input-div-third">
+          <label class="input-label" for="state">State</label>
+          <input name="state" type="text"/>  
+        </div>
+        <div class="input-div-third">
+          <label class="input-label" for="zip">Zip Code</label>
+          <input name="zip" type="text"/>
+        </div>
+        <br style="clear:both;" />
+        <div class="input-div-half">
+          <label class="input-label" for="email"> Email </label>
+          <input name="email" type="text"/> 
+        </div>
+        <br style="clear:both;" />
+
         <h3> Payment </h3>
-        <input class="half" name="card_num" type="text" placeholder="Card Number"/> <br/>
-        <input class="half" name="card_exp" type="text" placeholder="Expiration Date"/>
-        <input class="half" name="card_sec" type="text" placeholder="Security Code"/> <br/>
-        <input type="submit" value="Complete Purchase"/>
+        <div class="input-div-half">
+          <label class="input-label"> Card Number </label>
+          <input name="card_num" type="text" placeholder="XXXX-XXXX-XXXX-XXXX"/>
+        </div>
+        <br style="clear:both;" />
+        <div class="input-div-half">
+          <label class="input-label"> Expiration Date </label>
+          <input name="card_exp" type="text" placeholder="MM/YY"/>
+        </div>
+        <div class="input-div-half">
+          <label class="input-label"> Security Number </label>
+          <input name="card_sec" type="text" placeholder="Security Code" required/> <br/>
+        </div>
+        <br style="clear:both;" />
+        <div id="error-message">
+          <p> Please fill out all required fields. </p>
+        </div>
+        <input class="submit_btn" name="submit_btn" type="button" value="Complete Purchase"/>
       </form>
     </div>
     `
+    // Get the <span> element that closes the modal
+    let span = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modal.style.display = "none";
+    }
+
+    $("input[type=text]").on('change', (e) => {
+      e.target.style = "border: 2px solid #ccc;"
+    })
+
+    document.forms[0].submit_btn.onclick = () => {
+      // check to see if form is complete
+      console.log(document.forms[0])
+
+      let valid = true
+      for (let element of document.forms[0].elements) {
+        if (element.type == "text") {
+          console.log("element is text")
+          if (element.value == "") {
+            element.style = "border: 2px red solid"
+            valid = false
+          }
+        }
+      }
+
+      if (valid) {
+        modal.innerHTML = 
+          `
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="purchase_msg"> Completing Purchase... </p>
+          </div>
+          `
+        setTimeout(() => {
+          modal.style.display = "block";
+          modal.innerHTML = 
+          `
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p class="purchase_msg"> Congratulations! Your Purchase is Complete! </p>
+            <p> Your order will arrive in two days. </p>
+          </div>
+          `
+          // Get the <span> element that closes the modal
+          let span = document.getElementsByClassName("close")[0];
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function () {
+            modal.style.display = "none";
+          }
+        }, 2000)
+      } else {
+        document.getElementById("error-message").style = "display:block;"
+      }
+    }
+
     modal.style.display = "block";
   })
 });
 
 // Get the modal
 let modal = document.getElementById("myModal");
-
-// Get the <span> element that closes the modal
-let span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-    modal.style.display = "none";
-}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {

@@ -74,18 +74,11 @@
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-.half {
-  width: 15rem;
-}
-
-.third {
-  width: 10rem;
-}
-
 /* Modal Content */
 .modal-content {
   background-color: #fefefe;
   margin: auto;
+  margin-bottom: 20px;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
@@ -105,3 +98,63 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.purchase_msg {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+input[type=text] {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 10px 12px 10px;
+}
+
+.input-label {
+  display:block; 
+  color:grey; 
+  font-size: 16px;
+}
+
+.input-div-half {
+  float:left;
+  margin-right: 1rem;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  width: 14rem;
+}
+
+.input-div-third {
+  float:left;
+  margin-right: 1rem;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  width: 9rem;
+}
+
+.submit_btn {
+  cursor: pointer;
+  background-color: dodgerblue; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+#error-message {
+  color: red;
+  display: none;
+}
+
