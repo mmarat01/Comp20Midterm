@@ -44,7 +44,7 @@ $(document).ready(() => {
     `
     <div class="modal-content">
       <span class="close">&times;</span>
-      <h3> Order Details </h3>
+      <h3> Your Order </h3>
       <img style="border: 1px" width=200 src="../Images/shirts/${shirt.image}"/>
       <p> Item: ${shirt.name} </p> 
       <p> Cost: $${shirt.cost} </p>
@@ -63,6 +63,16 @@ $(document).ready(() => {
         <div class="input-div-half">
           <label class="input-label" for="lname">Last Name</label>
           <input id="lname" type="text" value="" name="name">
+        </div>
+        <br style="clear:both;" />
+
+        <div class="input-div-half">
+          <label class="input-label" for="fname">Address Line 1</label>
+          <input id="address1" type="text" value="" name="address1">
+        </div>
+        <div class="input-div-half">
+          <label class="input-label" for="lname">Address Line 2 (optional)</label>
+          <input id="address2" type="text" value="" name="address2">
         </div>
         <br style="clear:both;" />
 
@@ -97,7 +107,7 @@ $(document).ready(() => {
         </div>
         <div class="input-div-half">
           <label class="input-label"> Security Number </label>
-          <input name="card_sec" type="text" placeholder="Security Code" required/> <br/>
+          <input name="card_sec" type="text" placeholder="XXX" required/> <br/>
         </div>
         <br style="clear:both;" />
         <div id="error-message">
@@ -124,7 +134,7 @@ $(document).ready(() => {
 
       let valid = true
       for (let element of document.forms[0].elements) {
-        if (element.type == "text") {
+        if (element.type == "text" && element.name != "address2") {
           console.log("element is text")
           if (element.value == "") {
             element.style = "border: 2px red solid"
@@ -137,7 +147,6 @@ $(document).ready(() => {
         modal.innerHTML = 
           `
           <div class="modal-content">
-            <span class="close">&times;</span>
             <p class="purchase_msg"> Completing Purchase... </p>
           </div>
           `

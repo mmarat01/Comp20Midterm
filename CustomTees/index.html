@@ -9,102 +9,136 @@
     <meta name="description" content="COMP20 midterm project" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../styles.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./index.css" />
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script>
-        window.onload = function () {
-            console.log("drawing image...")
-            var canvas = document.getElementById("myCanvas")
-            var ctx = canvas.getContext("2d")
-            var img = document.getElementById("custom-shirt-image")
-            console.log($('canvas').width())
-            ctx.drawImage(img, 10, 10, $('canvas').width(), $('canvas').height())
-            console.log("drawing image...")
-        };
-    </script>
 
 <body>
     <!-- BEGIN HEADER, NAVBAR -->
+    <header class="navbar">
+        <a href="../Homepage/index.html">
+            <img id="small-logo" src="../Images/small-logo.png" height="45" />
+            <img id="t-shirt-logo" src="../Images/logo.png" height="50" /></a>
+        <a class="toggle-button" href="#">
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+            <span class="burger-bar"></span>
+        </a>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="../Homepage/index.html">Home</a></li>
+                <li><a href="../About/index.html">About</a></li>
+                <li><a href="../Contact/index.html">Contact</a></li>
+                <li><a href="../Shop/index.html">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
     <!-- END HEADER, NAVBAR -->
 
     <!-- BEGIN BODY -->
+
     <div class="body-div">
-        <h1 class="page-title"> Custom Tees </h1>
-        <div class="container">
-            <div class="fixed">
-                <form>
+        <div class="page-container">
+            <div class="central">
+                <h1 class="page-title" style="display: none;">Custom Tees</h1>
+                <h3> Design Your Shirt! </h3>
+                <form autocomplete="off">
+                    <label> What is Your Text? </label><input id="name" type="text" maxlength="15"/> <br/>
+                    <label> What is Your Size? </label>
                     <select>
-                        <option> --choose a color-- </option>
-                        <option> white </option>
-                        <option> red </option>
-                        <option> green </option>
-                        <option> blue </option>
+                        <option> XS </option>
+                        <option> S </option>
+                        <option> M </option>
+                        <option> L </option>
+                        <option> XL </option>
                     </select>
+                    <br/>
+                    <label> Price: </label>
+                    <label> $30 </label>
+                    <canvas id="imageCanvas" style="display:block" id="imageCanvas" width=400px height=400px>
+                        <canvas id="canvasID"></canvas>
+                    </canvas>
+    
+                    <div class="buy-button-div"> 
+                        <label class="buy-button" id="${index}"> Buy Now </label>
+                    </div>
                 </form>
             </div>
-            <div class="flex-item">
-                <div class="custom-image-div">
-                    <img id="custom-shirt-image" style="display: none;" width="220" height="277"
-                        src="../Images/shirts/custom-shirt.png" alt="The Scream">
-                    <p>Canvas:</p>
-                    <canvas id="myCanvas" width="240" height="297" style="border:1px solid #d3d3d3;">
-                        Your browser does not support the HTML5 canvas tag.
-                    </canvas>
-                </div>
-                <script defer src="../scripts/navbar.js"></script>
-                </head>
+        </div>
+    </div>
+    <!-- END BODY-->
 
-                <body>
-                    <!-- BEGIN HEADER, NAVBAR -->
-                    <header class="navbar">
-                        <a href="../Homepage/index.html">
-                            <img id="small-logo" src="../Images/small-logo.png" height="45" />
-                            <img id="t-shirt-logo" src="../Images/logo.png" height="50" /></a>
-                        <a class="toggle-button" href="#">
-                            <span class="burger-bar"></span>
-                            <span class="burger-bar"></span>
-                            <span class="burger-bar"></span>
-                        </a>
-                        <nav class="nav-links">
-                            <ul>
-                                <li><a href="../Homepage/index.html">Home</a></li>
-                                <li><a href="../About/index.html">About</a></li>
-                                <li><a href="../Contact/index.html">Contact</a></li>
-                                <li><a href="../Shop/index.html">Shop</a></li>
-                            </ul>
-                        </nav>
-                    </header>
-                    <!-- END HEADER, NAVBAR -->
+    <!-- BEGIN FOOTER -->
+    <footer>Copyright © 2021 | T-Shirt Hub | All Rights Reserved</footer>
+    <!-- END FOOTER -->
 
-                    <!-- BEGIN BODY -->
-                    <div class="body-div">
-                        <div class="page-container">
-                            <h1 class="page-title">Custom Tees</h1>
-                            <div class="container">
-                                <div class="fixed">
-                                    <form>
-                                        <select>
-                                            <option>--choose a color--</option>
-                                            <option>white</option>
-                                            <option>red</option>
-                                            <option>green</option>
-                                            <option>blue</option>
-                                        </select>
-                                    </form>
-                                </div>
-                                <div class="flex-item">
-                                    <div class="custom-image-div">
-                                        <canvas id="viewport" class="custom-shirt-image"> </canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END BODY-->
+    <script>
+        var text_title = "";
+        var canvas = document.getElementById('imageCanvas');
+        console.log(document.getElementById('imageCanvas'))
+        var ctx = document.getElementById('imageCanvas').getContext('2d');
+        var img = new Image();
+        img.crossOrigin = "anonymous";
 
-                    <!-- BEGIN FOOTER -->
-                    <footer>Copyright © 2021 | T-Shirt Hub | All Rights Reserved</footer>
-                    <!-- END FOOTER -->
-                </body>
+        window.addEventListener('load', DrawPlaceholder)
+
+        function DrawPlaceholder() {
+            console.log("happens")
+            img.onload = function () {
+                DrawOverlay(img);
+                DrawText();
+                DynamicText(img)
+            };
+            img.src = 'https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg';
+        }
+
+        function DrawOverlay(img) {
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0);
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.0)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        function DrawText() {
+            ctx.fillStyle = "black";
+            ctx.textBaseline = 'middle';
+            ctx.font = "30px 'Montserrat'";
+            ctx.fillText(text_title, 100, 150);
+        }
+        function DynamicText(img) {
+            document.getElementById('name').addEventListener('keyup', function () {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                DrawOverlay(img);
+                DrawText();
+                text_title = this.value;
+                ctx.fillText(text_title, 100, 150);
+            });
+        }
+        function handleImage(e) {
+            var reader = new FileReader();
+            var img = "";
+            var src = "";
+            reader.onload = function (event) {
+                img = new Image();
+                img.onload = function () {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+                }
+                img.src = event.target.result;
+                src = event.target.result;
+                canvas.classList.add("show");
+                DrawOverlay(img);
+                DrawText();
+                DynamicText(img);
+            }
+
+            reader.readAsDataURL(e.target.files[0]);
+
+        }
+        function convertToImage() {
+            window.open(canvas.toDataURL('png'));
+        }
+    </script>
+</body>
 
 </html>

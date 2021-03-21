@@ -51,11 +51,12 @@
   text-align: center;
   border: black solid 2px;
   text-transform: capitalize;
+  border-radius: 3px;
 }
 
 .buy-button:hover {
   cursor: pointer;
-  background-color: red;
+  /* background-color: red; */
 }
 
 /* styles for modal (pop up window) */
