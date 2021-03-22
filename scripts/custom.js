@@ -10,12 +10,12 @@ $(document).ready(() => {
 
   function DrawPlaceholder() {
     console.log("happens")
+    img.src = 'https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg';
     img.onload = function () {
       DrawOverlay(img);
       DrawText();
       DynamicText(img)
     };
-    img.src = 'https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg';
   }
 
   function DrawOverlay(img) {
