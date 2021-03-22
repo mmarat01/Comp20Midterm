@@ -1,0 +1,8 @@
+h2 {text-align: center; background-color: #005F4E; font-size: 50px; color: white;}
+
+
+.left-box{display: inline-block; width: 40%; height: 500px; padding: 10px 40px;
+  background-color: #52857C; border: 20px solid #005F4E; border-left: 50px solid #005F4E;
+  color: white; font-size: 25px;}
+
+.right-box{display: inline-block; float: right; padding: 50px 100px; padding-right: 200px;}
