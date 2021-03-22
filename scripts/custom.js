@@ -1,21 +1,23 @@
 $(document).ready(() => {
   var text_title = "";
   var canvas = document.getElementById('imageCanvas');
-  console.log(document.getElementById('imageCanvas'))
   var ctx = document.getElementById('imageCanvas').getContext('2d');
   var img = new Image();
   img.crossOrigin = "anonymous";
 
-  window.addEventListener('load', DrawPlaceholder)
+  window.addEventListener('load', DrawPlaceholder);
 
   function DrawPlaceholder() {
-    console.log("happens")
-    img.src = 'https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg';
+    // if image is already loaded, just draw it?
+    DrawOverlay(img);
+    DrawText();
+    DynamicText(img)
     img.onload = function () {
       DrawOverlay(img);
       DrawText();
       DynamicText(img)
     };
+    img.src = 'https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg';
   }
 
   function DrawOverlay(img) {
@@ -41,10 +43,6 @@ $(document).ready(() => {
       DrawText();
       ctx.fillText(text_title, 100, 150);
     });
-  }
-
-  function convertToImage() {
-    window.open(canvas.toDataURL('png'));
   }
 
   $("#buy-btn").on('click', () => {
@@ -141,13 +139,9 @@ $(document).ready(() => {
     })
 
     document.forms[0].submit_btn.onclick = () => {
-      // check to see if form is complete
-      console.log(document.forms[0])
-
       let valid = true
       for (let element of document.forms[0].elements) {
         if (element.type == "text" && element.name != "address2") {
-          console.log("element is text")
           if (element.value == "") {
             element.style = "border: 2px red solid"
             valid = false
