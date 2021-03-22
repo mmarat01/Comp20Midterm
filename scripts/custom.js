@@ -8,16 +8,13 @@ $(document).ready(() => {
   window.addEventListener('load', DrawPlaceholder);
 
   function DrawPlaceholder() {
-    // if image is already loaded, just draw it?
-    DrawOverlay(img);
-    DrawText();
-    DynamicText(img)
-    img.onload = function () {
+    // on load wasn't supported by safari, so setTimeout is used
+    img.src = 'https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg';
+    setTimeout(() => {
       DrawOverlay(img);
       DrawText();
       DynamicText(img)
-    };
-    img.src = 'https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg';
+    }, 200)
   }
 
   function DrawOverlay(img) {

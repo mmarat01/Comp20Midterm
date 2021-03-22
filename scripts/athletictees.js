@@ -129,13 +129,9 @@ $(document).ready(() => {
     })
 
     document.forms[0].submit_btn.onclick = () => {
-      // check to see if form is complete
-      console.log(document.forms[0])
-
       let valid = true
       for (let element of document.forms[0].elements) {
         if (element.type == "text" && element.name != "address2") {
-          console.log("element is text")
           if (element.value == "") {
             element.style = "border: 2px red solid"
             valid = false
