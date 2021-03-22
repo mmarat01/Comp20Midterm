@@ -2,143 +2,89 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>T-Shirt Hub</title>
-    <meta name="author" content="Co-authors: Theseus Lim, Mijael Maratuech, Jimmy Maslen, and Stephanie Prisco" />
-    <meta name="description" content="COMP20 midterm project" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../styles.css" />
-    <link rel="stylesheet" href="./index.css" />
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>T-Shirt Hub</title>
+  <meta name="author" content="Co-authors: Theseus Lim, Mijael Maratuech, Jimmy Maslen, and Stephanie Prisco" />
+  <meta name="description" content="COMP20 midterm project" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="../scripts/custom.js"></script>
 
 <body>
-    <!-- BEGIN HEADER, NAVBAR -->
-    <header class="navbar">
-        <a href="../Homepage/index.html">
-            <img id="small-logo" src="../Images/small-logo.png" height="45" />
-            <img id="t-shirt-logo" src="../Images/logo.png" height="50" /></a>
-        <a class="toggle-button" href="#">
-            <span class="burger-bar"></span>
-            <span class="burger-bar"></span>
-            <span class="burger-bar"></span>
-        </a>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="../Homepage/index.html">Home</a></li>
-                <li><a href="../About/index.html">About</a></li>
-                <li><a href="../Contact/index.html">Contact</a></li>
-                <li><a href="../Shop/index.html">Shop</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- END HEADER, NAVBAR -->
-
-    <!-- BEGIN BODY -->
-
-    <div class="body-div">
-        <div class="page-container">
-            <div class="central">
-                <h1 class="page-title" style="display: none;">Custom Tees</h1>
-                <h3> Design Your Shirt! </h3>
-                <form autocomplete="off">
-                    <label> What is Your Text? </label><input id="name" type="text" maxlength="15"/> <br/>
-                    <label> What is Your Size? </label>
-                    <select>
-                        <option> XS </option>
-                        <option> S </option>
-                        <option> M </option>
-                        <option> L </option>
-                        <option> XL </option>
-                    </select>
-                    <br/>
-                    <label> Price: </label>
-                    <label> $30 </label>
-                    <canvas id="imageCanvas" style="display:block" id="imageCanvas" width=400px height=400px>
-                        <canvas id="canvasID"></canvas>
-                    </canvas>
-    
-                    <div class="buy-button-div"> 
-                        <label class="buy-button" id="${index}"> Buy Now </label>
-                    </div>
-                </form>
-            </div>
-        </div>
+  <!-- BEGIN MODAL -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
     </div>
-    <!-- END BODY-->
+  </div>
+  <!-- END MODAL -->
 
-    <!-- BEGIN FOOTER -->
-    <footer>Copyright © 2021 | T-Shirt Hub | All Rights Reserved</footer>
-    <!-- END FOOTER -->
 
-    <script>
-        var text_title = "";
-        var canvas = document.getElementById('imageCanvas');
-        console.log(document.getElementById('imageCanvas'))
-        var ctx = document.getElementById('imageCanvas').getContext('2d');
-        var img = new Image();
-        img.crossOrigin = "anonymous";
+  <!-- BEGIN HEADER, NAVBAR -->
+  <header class="navbar">
+    <a href="../Homepage/index.html">
+      <img id="small-logo" src="../Images/small-logo.png" height="45" />
+      <img id="t-shirt-logo" src="../Images/logo.png" height="50" /></a>
+    <a class="toggle-button" href="#">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </a>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="../Homepage/index.html">Home</a></li>
+        <li><a href="../About/index.html">About</a></li>
+        <li><a href="../Contact/index.html">Contact</a></li>
+        <li><a href="../Shop/index.html">Shop</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!-- END HEADER, NAVBAR -->
 
-        window.addEventListener('load', DrawPlaceholder)
+  <!-- BEGIN BODY -->
 
-        function DrawPlaceholder() {
-            console.log("happens")
-            img.onload = function () {
-                DrawOverlay(img);
-                DrawText();
-                DynamicText(img)
-            };
-            img.src = 'https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg';
-        }
+  <div class="body-div">
+    <div class="page-container">
+      <div class="central">
+        <h1 class="page-title" style="display: none;">Custom Tees</h1>
+        <h2> Design Your Shirt! </h2>
+        <form autocomplete="off">
+          <label> What is Your Text? </label><input id="name" name="msg" type="text" maxlength="13" /> <br />
+          <label> What is Your Size? </label>
+          <select>
+            <option> XS </option>
+            <option> S </option>
+            <option> M </option>
+            <option> L </option>
+            <option> XL </option>
+          </select>
+          <br />
+          <label> Price: </label>
+          <label style="font-weight: normal;"> $30 </label>
+          <canvas id="imageCanvas" style="display:block" id="imageCanvas" width=400px height=400px>
+            <canvas id="canvasID"></canvas>
+          </canvas>
 
-        function DrawOverlay(img) {
-            ctx.fillStyle = '#fff';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(img, 0, 0);
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.0)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
-        function DrawText() {
-            ctx.fillStyle = "black";
-            ctx.textBaseline = 'middle';
-            ctx.font = "30px 'Montserrat'";
-            ctx.fillText(text_title, 100, 150);
-        }
-        function DynamicText(img) {
-            document.getElementById('name').addEventListener('keyup', function () {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                DrawOverlay(img);
-                DrawText();
-                text_title = this.value;
-                ctx.fillText(text_title, 100, 150);
-            });
-        }
-        function handleImage(e) {
-            var reader = new FileReader();
-            var img = "";
-            var src = "";
-            reader.onload = function (event) {
-                img = new Image();
-                img.onload = function () {
-                    canvas.width = img.width;
-                    canvas.height = img.height;
-                    ctx.drawImage(img, 0, 0);
-                }
-                img.src = event.target.result;
-                src = event.target.result;
-                canvas.classList.add("show");
-                DrawOverlay(img);
-                DrawText();
-                DynamicText(img);
-            }
+          <div class="buy-button-div">
+            <label class="buy-button" id="buy-btn"> Buy Now </label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- END BODY-->
 
-            reader.readAsDataURL(e.target.files[0]);
+  <!-- BEGIN FOOTER -->
+  <footer>Copyright © 2021 | T-Shirt Hub | All Rights Reserved</footer>
+  <!-- END FOOTER -->
 
-        }
-        function convertToImage() {
-            window.open(canvas.toDataURL('png'));
-        }
-    </script>
+  <script>
+
+  </script>
 </body>
 
 </html>

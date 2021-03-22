@@ -1,4 +1,4 @@
-h3 {
+h2 {
   text-align: center;
   font-size: 1.5em;
   margin-bottom: 10px;
@@ -48,4 +48,114 @@ canvas {
 }
 #canvasID {
   z-index: 9999;
+}
+
+/* styles for modal (pop up window) */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.purchase_msg {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+input[type=text] {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 10px 12px 10px;
+}
+
+.input-label {
+  display:block; 
+  color:grey; 
+  font-size: 16px;
+}
+
+.input-div-half {
+  float:left;
+  margin-right: 1rem;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  width: 14rem;
+}
+
+.input-div-third {
+  float:left;
+  margin-right: 1rem;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  width: 9rem;
+}
+
+.submit_btn {
+  cursor: pointer;
+  background-color: dodgerblue; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 26px;
+}
+
+#error-message {
+  color: red;
+  display: none;
+}
+
+label {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+select {
+  padding: 10px;
+  display: block;
 }
