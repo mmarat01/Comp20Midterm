@@ -1,86 +1,94 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>T-Shirt Hub</title>
-  <meta name="author" content="Co-authors: Theseus Lim, Mijael Maratuech, Jimmy Maslen, and Stephanie Prisco" />
-  <meta name="description" content="COMP20 midterm project" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="../styles.css" />
-  <link rel="stylesheet" href="index.css" />
-  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-  <script src="../Scripts/custom.js"></script>
-
-<body>
-  <!-- BEGIN MODAL -->
-  <div id="myModal" class="modal">
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-    </div>
-  </div>
-  <!-- END MODAL -->
-  <!-- BEGIN HEADER, NAVBAR -->
-  <header class="navbar">
-    <a href="../index.html">
-      <img id="small-logo" src="../Images/small-logo.png" height="45" />
-      <img id="t-shirt-logo" src="../Images/logo.png" height="50" /></a>
-    <a class="toggle-button" href="#">
-      <span class="burger-bar"></span>
-      <span class="burger-bar"></span>
-      <span class="burger-bar"></span>
-    </a>
-    <nav class="nav-links">
-      <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../About/index.html">About</a></li>
-        <li><a href="../Shop/index.html">Shop</a></li>
-        <li><a href="../Contact/index.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-  <!-- END HEADER, NAVBAR -->
-
-  <!-- BEGIN BODY -->
-
-  <div class="body-div">
-    <div class="page-container">
-      <div class="central">
-        <h1 class="page-title" style="display: none;">Custom Tees</h1>
-        <h2> Design Your Shirt! </h2>
-        <form autocomplete="off">
-          <label> What is Your Text? </label><input id="name" name="msg" type="text" maxlength="13" /> <br />
-          <label> What is Your Size? </label>
-          <select>
-            <option> XS </option>
-            <option> S </option>
-            <option> M </option>
-            <option> L </option>
-            <option> XL </option>
-          </select>
-          <br />
-          <label> Price: </label>
-          <label style="font-weight: normal;"> $30 </label>
-          <canvas id="imageCanvas" style="display:block" id="imageCanvas" width=400px height=400px>
-            <canvas id="canvasID"></canvas>
-          </canvas>
-          <div class="buy-button-div">
-            <label class="buy-button" id="buy-btn"> Buy Now </label>
-          </div>
-        </form>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>T-Shirt Hub</title>
+    <meta
+      name="author"
+      content="Co-authors: Theseus Lim, Mijael Maratuech, Jimmy Maslen, and Stephanie Prisco"
+    />
+    <meta name="description" content="COMP20 midterm project" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script defer src="../Scripts/custom.js"></script>
+    <script defer src="../Scripts/navbar.js"></script>
+  </head>
+  <body>
+    <!-- BEGIN MODAL -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
       </div>
     </div>
-  </div>
-  <!-- END BODY-->
+    <!-- END MODAL -->
+    <!-- BEGIN HEADER, NAVBAR -->
+    <header class="navbar">
+      <a href="../index.html">
+        <img id="small-logo" src="../Images/small-logo.png" height="45" />
+        <img id="t-shirt-logo" src="../Images/logo.png" height="50"
+      /></a>
+      <a class="toggle-button" href="#">
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+        <span class="burger-bar"></span>
+      </a>
+      <nav class="nav-links">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../About/index.html">About</a></li>
+          <li><a href="../Shop/index.html">Shop</a></li>
+          <li><a href="../Contact/index.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- END HEADER, NAVBAR -->
 
-  <!-- BEGIN FOOTER -->
-  <footer>Copyright © 2021 | T-Shirt Hub | All Rights Reserved</footer>
-  <!-- END FOOTER -->
+    <!-- BEGIN BODY -->
+    <div class="body-div">
+      <div class="page-container">
+        <div class="central">
+          <h1 class="page-title" style="display: none">Custom Tees</h1>
+          <h2>Design Your Shirt!</h2>
+          <form autocomplete="off">
+            <label> What is Your Text? </label
+            ><input id="name" name="msg" type="text" maxlength="13" /> <br />
+            <label> What is Your Size? </label>
+            <select>
+              <option>XS</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+            <br />
+            <label> Price: </label>
+            <label style="font-weight: normal"> $30 </label>
+            <div class="canvas-wrapper">
+              <canvas
+                id="imageCanvas"
+                style="display: block"
+                id="imageCanvas"
+                width="400px"
+                height="400px"
+              >
+                <canvas id="canvasID"></canvas>
+              </canvas>
+            </div>
+            <div class="buy-button-div">
+              <label class="buy-button" id="buy-btn"> Buy Now </label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- END BODY-->
 
-  <script>
-
-  </script>
-</body>
-
+    <!-- BEGIN FOOTER -->
+    <footer>Copyright © 2021 | T-Shirt Hub | All Rights Reserved</footer>
+    <!-- END FOOTER -->
+  </body>
 </html>

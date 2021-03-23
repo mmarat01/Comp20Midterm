@@ -5,16 +5,23 @@ h2 {
 }
 
 .central {
-  width: 500px;
+  max-width: 500px;
   margin: auto;
   background-color: white;
-  padding: 2em;
+  padding: 1rem;
   color: black;
+}
+
+.canvas-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 canvas {
   margin-top: 20px;
   margin-bottom: 20px;
+  max-width: 100%;
 }
 
 /* BUY BUTTON */

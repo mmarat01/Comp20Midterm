@@ -14,7 +14,6 @@ $(document).ready(() => {
     // on load wasn't supported by safari, so setTimeout is used
     img.src =
       "https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg";
-    // "https://raw.githubusercontent.com/theseus27/Comp20Midterm/main/Images/shirts/black-shirt.jpg";
     setTimeout(() => {
       DrawOverlay(img);
       DrawText();
