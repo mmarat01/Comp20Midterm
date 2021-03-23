@@ -5,35 +5,46 @@ h2 {
   color: white;
 }
 
+.contact-panel {
+  max-width: 100%;
+}
+
 .left-box {
-  display: inline-block;
-  width: 45%;
-  height: 700px;
-  padding: 10px 40px;
+  width: 50%;
+  min-height: 700px;
+  padding: 1rem;
   background-color: #52857c;
-  border: 20px solid #005f4e;
-  border-left: 50px solid #005f4e;
+  font-size: 1.5em;
+  float: left;
+  margin: 1rem;
+}
+
+.left-box a {
   color: white;
-  font-size: 25px;
 }
 
 .right-box {
-  display: inline-block;
-  padding: 10px 10px;
-  padding-right: 300px;
   float: right;
-  font-size: 30px;
-  width: auto;
+  width: 40%;
+  min-height: 700px;
+  padding: 1rem;
   background-color: #c2c2c2;
-  border: 20px solid #005f4e;
-  border-right: 40px solid #005f4e;
-  height: 400px;
+  margin: 1rem;
+  font-size: 1.2em;
 }
 
-#form {
-  font-size: 15px;
+@media screen and (max-width: 775px) {
+  .left-box,
+  .right-box {
+    float: none;
+    width: 100%;
+    min-height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
 }
 
-#request input {
-  min-height: 100px;
+input[type="submit"] {
+  padding: 0.5rem;
 }

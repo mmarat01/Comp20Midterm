@@ -154,19 +154,19 @@ body {
   grid-row: 2;
   margin-left: auto;
   margin-right: auto;
-  padding: 2rem 4rem 2rem 4rem;
+  padding: 2rem 4rem 3rem 4rem;
   width: 100vw;
 }
 
 @media screen and (max-width: 600px) {
   .body-div {
-    padding: 2rem 2rem 2rem 2rem;
+    padding: 2rem 2rem 3rem 2rem;
   }
 }
 
 .section-title {
   font-size: 2em;
-  padding: 1rem;
+  padding: 0rem;
 }
 
 /* Rule for the footer div of all pages */
