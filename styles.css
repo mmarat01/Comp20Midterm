@@ -169,6 +169,14 @@ body {
   padding: 0rem;
 }
 
+.return-shop {
+  text-decoration: underline;
+  font-size: 1.5em;
+  margin: 1rem 2rem 0rem 1rem;
+  float: right;
+  color: #fff;
+}
+
 /* Rule for the footer div of all pages */
 footer {
   grid-row: 3;

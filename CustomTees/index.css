@@ -12,6 +12,10 @@ h2 {
   color: black;
 }
 
+.return-shop {
+  margin: 2rem 1rem 0rem 1rem;
+}
+
 .canvas-wrapper {
   display: flex;
   align-items: center;

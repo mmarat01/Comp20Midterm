@@ -1,36 +1,51 @@
-h1 {
-  font-size: 40px;
-}
-
-p {
-  text-align: center;
-  /* font-family: "archivo black", sans-serif; */
-}
-
-.picture {
-  max-width: 30%;
-  width: inherit;
-  height: 350px;
-  top: 100px;
+.shop-page-panel {
+  font-size: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  margin: 0px 50px 40px 50px;
-  border: 3px solid #c4c4c4;
-  display: inline-block;
-  background-color: #fff;
 }
 
-.picture p {
+.shop-page-panel a {
+  text-decoration: none;
   color: #000;
-  font-size: 30px;
+}
+
+.picture-card {
+  max-width: fit-content;
+  background-color: #fff;
+  text-align: center;
+  border: 5px solid #000;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 810px) {
+  .picture-card {
+    min-width: 60vw;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .picture-card {
+    min-width: 85vw;
+  }
 }
 
 .image {
-  max-height: 300px;
-  max-width: 100%;
+  width: 300px;
+  height: 400px;
 }
 
-a {
-  text-decoration: none;
+.card-text {
+  padding: 1rem;
+  font-size: 1.5em;
+  color: #000;
+}
+
+.picture-card p {
+  display: block;
 }
