@@ -4,22 +4,15 @@ $(document).ready(() => {
   var canvas = document.getElementById("imageCanvas");
   var ctx = document.getElementById("imageCanvas").getContext("2d");
   var img = new Image();
-  img.crossOrigin = "anonymous"; // set up cross origin image sourcing
+  img.src =
+    "https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg";
+  setTimeout(() => {
+    DrawOverlay(img);
+    DrawText();
+    DynamicText(img);
+  }, 200);
 
-  // on load, draw
-  window.addEventListener("load", DrawPlaceholder);
-
-  // canvas build + display
-  function DrawPlaceholder() {
-    // on load wasn't supported by safari, so setTimeout is used
-    img.src =
-      "https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg";
-    setTimeout(() => {
-      DrawOverlay(img);
-      DrawText();
-      DynamicText(img);
-    }, 500);
-  }
+  img.crossOrigin = "anonymous";
 
   // canvas set up + bg image
   function DrawOverlay(img) {
@@ -34,7 +27,7 @@ $(document).ready(() => {
   function DrawText() {
     ctx.fillStyle = "black";
     ctx.textBaseline = "middle";
-    ctx.font = "30px 'Montserrat'";
+    ctx.font = "25px 'Courier'";
     ctx.fillText(text_title, 100, 150);
   }
 
