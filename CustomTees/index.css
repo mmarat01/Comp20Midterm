@@ -36,11 +36,10 @@ canvas {
   border-radius: 3px;
 }
 
-
 /* FROM ONLINE */
 canvas {
   background-color: #eee;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 .canvas-wrap {
   margin-top: 50px;
@@ -62,8 +61,8 @@ canvas {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
@@ -96,7 +95,7 @@ canvas {
   font-weight: bold;
 }
 
-input[type=text] {
+input[type="text"] {
   width: 100%;
   display: block;
   box-sizing: border-box;
@@ -108,13 +107,13 @@ input[type=text] {
 }
 
 .input-label {
-  display:block; 
-  color:grey; 
+  display: block;
+  color: grey;
   font-size: 16px;
 }
 
 .input-div-half {
-  float:left;
+  float: left;
   margin-right: 1rem;
   margin-bottom: 10px;
   box-sizing: border-box;
@@ -122,7 +121,7 @@ input[type=text] {
 }
 
 .input-div-third {
-  float:left;
+  float: left;
   margin-right: 1rem;
   margin-bottom: 10px;
   box-sizing: border-box;

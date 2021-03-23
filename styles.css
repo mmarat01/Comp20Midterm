@@ -152,17 +152,21 @@ body {
   background-color: #005f4e;
   color: #fff;
   grid-row: 2;
-}
-
-.page-container {
   margin-left: auto;
   margin-right: auto;
   padding: 2rem 4rem 2rem 4rem;
+  width: 100vw;
 }
+
 @media screen and (max-width: 600px) {
-  .page-container {
+  .body-div {
     padding: 2rem 2rem 2rem 2rem;
   }
+}
+
+.section-title {
+  font-size: 2em;
+  padding: 1rem;
 }
 
 /* Rule for the footer div of all pages */
@@ -174,6 +178,12 @@ footer {
   justify-content: center;
   align-items: center;
   font-weight: 500;
+}
+
+@media screen and (max-width: 300px) {
+  footer {
+    font-size: 0.7em;
+  }
 }
 /* Rule for h1 elements */
 h1 {

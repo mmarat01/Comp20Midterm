@@ -1,0 +1,50 @@
+.box-paragraph {
+  margin: 0.7rem;
+}
+
+.about-panel {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left-box {
+  max-width: 50%;
+  min-height: 700px;
+  float: left;
+  padding: 1rem;
+  background-color: #52857c;
+  font-size: 1.5em;
+}
+
+.right-box {
+  float: right;
+  max-width: 50%;
+  padding: 1rem;
+}
+
+.right-box img {
+  margin: auto;
+}
+
+@media screen and (max-width: 850px) {
+  .about-panel {
+    flex-direction: column;
+  }
+  .left-box,
+  .right-box {
+    float: none;
+    min-width: 85vw;
+  }
+}
+
+@media screen and (max-width: 500) {
+  .right-box img {
+    min-width: 100%;
+    max-height: 400px;
+  }
+  .right-box {
+    min-width: 99vw;
+  }
+}
