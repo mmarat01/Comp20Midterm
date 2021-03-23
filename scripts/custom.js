@@ -4,19 +4,13 @@ $(document).ready(() => {
   var ctx = document.getElementById('imageCanvas').getContext('2d');
   var img = new Image();
   img.src = 'https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg';
-  img.crossOrigin = "anonymous";
-
-  window.addEventListener('load', DrawPlaceholder);
-
-  function DrawPlaceholder() {
-    // on load wasn't supported by safari, so setTimeout is used
-    img.src = 'https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg';
-    setTimeout(() => {
-      DrawOverlay(img);
+  setTimeout(() => {
+    DrawOverlay(img);
       DrawText();
-      DynamicText(img)
-    }, 200)
-  }
+      DynamicText(img);
+  }, 200);
+
+  img.crossOrigin = "anonymous";
 
   function DrawOverlay(img) {
     ctx.fillStyle = '#fff';
