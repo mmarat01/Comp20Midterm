@@ -169,6 +169,14 @@ body {
   padding: 0rem;
 }
 
+.background {
+  background-image: url(../Images/unsplash-keagan-henman-tshirts.png);
+  background-position: center;
+  background-color: transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .return-shop {
   text-decoration: underline;
   font-size: 1.5em;
