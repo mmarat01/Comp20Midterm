@@ -3,6 +3,7 @@ $(document).ready(() => {
   var canvas = document.getElementById('imageCanvas');
   var ctx = document.getElementById('imageCanvas').getContext('2d');
   var img = new Image();
+  img.src = 'https://images-na.ssl-images-amazon.com/images/I/412R%2B-HOhFL._AC_UX385_.jpg';
   img.crossOrigin = "anonymous";
 
   window.addEventListener('load', DrawPlaceholder);
@@ -28,7 +29,7 @@ $(document).ready(() => {
   function DrawText() {
     ctx.fillStyle = "black";
     ctx.textBaseline = 'middle';
-    ctx.font = "30px 'Montserrat'";
+    ctx.font = "25px 'Courier'";
     ctx.fillText(text_title, 100, 150);
   }
 
