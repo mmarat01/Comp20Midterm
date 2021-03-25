@@ -1,4 +1,4 @@
-# Comp20Midterm
+# T-Shirt Hub - COMP20 Midterm
 Midterm Project for COMP20
 
 Simple business website for my Web Development course's midterm project.  
